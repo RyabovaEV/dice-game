@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:  url(assets/dice.png) 88% bottom / 20% no-repeat;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 100vh;
+     
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6em;
+}
+
+.wrapper__top {
+    width: 100%;
+    margin-top: 3em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.wrapper__bottom {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.dice-result {
+    font-size: 4em;
+    text-transform: uppercase;
+}
+
+.btn-throw-dice {
+    width: 30%;
+    height: 3em;
+    border: none;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+}
