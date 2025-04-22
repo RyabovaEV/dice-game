@@ -6,13 +6,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:  url(assets/dice.png) 88% bottom / 20% no-repeat;
+    height: 100vh;
+    background: linear-gradient(-45deg, #f6b5b5, #fad6d6, #d8ecfc, #cde9fd);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
 }
 
 .wrapper {
     margin: 0 auto;
-    max-width: 1200px;
-    height: 100vh;
+    max-width: 700px;
+    min-height: 100vh;
+    padding: 0 1.5em;
      
 
     display: flex;
@@ -41,15 +45,89 @@ body {
 }
 
 .dice-result {
-    font-size: 4em;
+    width: 100%;
+    font-size: 3em;
     text-transform: uppercase;
 }
 
+.dice-result--red {
+    color: lightcoral;
+}
+
+.dice-result--blue {
+    color: lightskyblue;
+}
+
 .btn-throw-dice {
-    width: 30%;
+    min-width: 40%;
     height: 3em;
-    border: none;
+    border: 3px solid rgb(143, 7, 7);
     font-size: 1.5em;
     border-radius: 10px;
     cursor: pointer;
+    text-transform: uppercase;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.btn-throw-dice:hover {
+    box-shadow: 0 8px 15px rgba(143, 7, 7, 0.3);
+  transform: translateY(-2px);
+  }
+
+.dice {
+    width: 180px;
+    height: 180px;
+}
+
+.dice--red, .dice--blue {
+    transition: fill 0.3s ease;
+  }
+
+.dice--red {
+    fill: #f08080;
+}
+
+.dice--blue {
+    fill: #87cefa;
+}
+
+@keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@keyframes roll {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+  
+  .dice--animated {
+    animation: roll 0.5s ease-in-out;
+}
+
+@media (max-width: 500px) {
+    .wrapper{
+        gap: 4em;
+    }
+    .wrapper__top {
+        gap: 1em;
+    }
+    .dice-result {
+        font-size: 2em;
+    }
+    .btn-throw-dice {
+        width: 90%;
+        font-size: 1.3em;
+    }
+    .dice {
+        width: 140px;
+        height: 140px;
+      }
 }

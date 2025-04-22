@@ -9,27 +9,16 @@
   </head>
   <body>
 
-    <div class="wrapper">
+    <div class="wrapper" data-wrapper>
 
       <div class="wrapper__top">
-        <div class="dice-result" dice-result>НИЧЬЯ!</div>
+        <div data-result>НИЧЬЯ!</div>
         <button class="btn-throw-dice" data-throw-dice>Бросить кости</button>
       </div>
 
-      <div class="wrapper__bottom">
-        <div class="player1">
-          <svg class="dice-icon dice-icon--red" aria-label="Кости игрока 1" width="100" height="100">
-            <use href="assets/sprites.svg#dice_1"></use>
-          </svg>
-        </div>
-        <div class="player2">
-          <svg class="dice-icon dice-icon--red" aria-label="Кости игрока 2"  width="100" height="100">
-            <use href="assets/sprites.svg#dice_1"></use>
-          </svg>
-        </div>
+      <div class="wrapper__bottom" data-dice>
       </div>
 
     </div>
-
   </body>
 </html>
